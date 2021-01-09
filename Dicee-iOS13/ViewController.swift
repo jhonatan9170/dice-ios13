@@ -9,12 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    
+    @IBOutlet weak var dadoImagen1: UIImageView!
+    @IBOutlet weak var dadoImagen2: UIImageView!
+    let dados:[UIImage] = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")]
+  
+    @IBAction func rollButton(_ sender: UIButton) {
+        dadoImagen1.image = dados.randomElement()
+        dadoImagen2.image = dados[Int.random(in: 0...5)]
     }
-
-
+    
 }
 
